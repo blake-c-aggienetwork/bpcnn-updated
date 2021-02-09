@@ -41,9 +41,9 @@ call :setupTrial %trialNum%
 ::set Arguments
 set args=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
 ::run trial
-call :genData >"%trialDirectory%"\_log.txt 2>1
-call :train >>"%trialDirectory%"\_log.txt 2>1
-call :simulation >>"%trialDirectory%"\_log.txt 2>1
+call :genData
+call :train
+call :simulation
 ::end trial
 call :cleanup
 set trialNum=%trialNum%+1
@@ -58,27 +58,27 @@ exit /b 0
 
 :genData
 cd ..\
-echo GenData started %date% %time% &echo. &echo GenData started %date% %time% >con
+echo GenData started %date% %time% &echo.
 python main.py -Func GenData %args%
-echo GenData completed %date% %time% &echo. &echo GenData completed %date% %time% >con
+echo GenData completed %date% %time% &echo.
 echo ---------------------------------------------------------------------
 cd batch
 exit /b 0
 
 :train
 cd ..\
-echo Train started %date% %time% &echo. &echo Train started %date% %time% >con
+echo Train started %date% %time% &echo.
 python main.py -Func Train %args%
-echo Train completed %date% %time% &echo. &echo Train completed %date% %time% >con
+echo Train completed %date% %time% &echo.
 echo ---------------------------------------------------------------------
 cd batch
 exit /b 0
 
 :simulation
 cd ..\
-echo Simulation started %date% %time% &echo. &echo Simulation started %date% %time% >con
+echo Simulation started %date% %time% &echo.
 python main.py -Func Simulation %args%
-echo Simulation completed %date% %time% &echo. &echo Simulation completed %date% %time% >con
+echo Simulation completed %date% %time% &echo.
 echo ---------------------------------------------------------------------
 cd batch
 exit /b 0
