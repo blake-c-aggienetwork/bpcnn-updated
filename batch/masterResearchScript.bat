@@ -61,8 +61,8 @@ exit /b 0
 :runTrial
 :: runs trials
 :: args: in-current experiment num, in-current trial num
-set currentTrialDescription=trialDescriptionsE%~1[%~2]
-set currentTrialArgs=trialArgsE%~1[%~2]
+set currentTrialDescription=!trialDescriptionsE%~1[%~2]!
+set currentTrialArgs=!trialArgsE%~1[%~2]!
 call :setupTrial %~2
 call :genData
 call :train
