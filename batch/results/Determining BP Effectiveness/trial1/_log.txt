@@ -1,0 +1,298 @@
+GenData started Tue 02/09/2021  0:01:17.56 
+ 
+Function is set to GenData
+Corr para is set to 0.80
+BP iter for gen data is set to: [1]
+BP iter for simulation is set to: [1 1]
+Correlation function of channel noise: 
+[0.9999999  0.79999995 0.64       0.51199996 0.40960002 0.32768
+ 0.262144   0.20971519 0.16777213 0.13421775]
+Construct the Matrics H class!
+
+return Matrics C-V successfully!
+
+return Matrics V-C successfully!
+
+Open a tf session!
+Time: 404s
+end
+Close a tf session!
+Construct the Matrics H class!
+
+return Matrics C-V successfully!
+
+return Matrics V-C successfully!
+
+Open a tf session!
+Time: 23s
+end
+Close a tf session!
+GenData completed Tue 02/09/2021  0:08:31.44 
+ 
+---------------------------------------------------------------------
+Train started Tue 02/09/2021  0:17:28.25 
+ 
+Function is set to Train
+Corr para is set to 0.80
+BP iter for gen data is set to: [1]
+BP iter for simulation is set to: [1 1]
+Construct the data IO class for training!
+
+Test loss: 0.950391, orig loss: 4286.745923
+Iteration	Loss
+500
+0.16383854846159618
+1000
+0.15097946325937908
+1500
+0.1504417836666107
+2000
+0.14879255543152492
+2500
+0.14610686749219895
+3000
+0.14523419191439946
+3500
+0.14446137150128682
+4000
+0.1436583752433459
+4500
+0.14287819862365722
+5000
+0.1420957828561465
+5500
+0.14148636807998022
+6000
+0.14137717733780544
+6500
+0.14116709729035695
+7000
+0.1401419848203659
+7500
+0.14045955389738082
+8000
+0.14093475689490637
+8500
+0.13944663852453232
+9000
+0.13901986281077067
+9500
+0.13933684825897216
+10000
+0.13923405210177103
+10500
+0.14054258267084757
+11000
+0.13909222880999247
+11500
+0.13855666667222977
+12000
+0.13902081151803333
+12500
+0.14005137781302135
+13000
+0.13782739688952764
+13500
+0.13890513728062312
+14000
+0.13837998459736506
+14500
+0.13771845201651256
+15000
+0.1381461794177691
+15500
+0.13774851709604263
+16000
+0.1374270851413409
+16500
+0.13716958612203597
+17000
+0.1372101292014122
+17500
+0.13723962306976317
+18000
+0.1374545027812322
+18500
+0.13842178930838903
+19000
+0.13744730403025945
+19500
+0.13690819293260575
+20000
+0.1375985617438952
+20500
+0.13709524621566135
+21000
+0.1370488002896309
+21500
+0.13698480327924092
+22000
+0.13714244216680527
+22500
+0.13698472430308659
+23000
+0.13701892147461572
+23500
+0.13659015148878098
+24000
+0.1361159637570381
+24500
+0.13693526834249498
+25000
+0.13616167306900023
+25500
+0.13604044963916143
+26000
+0.13609394778807957
+26500
+0.1364232435822487
+27000
+0.13630199283361435
+27500
+0.13680294255415598
+28000
+0.13582825809717178
+28500
+0.13664702475070953
+29000
+0.13654265801111856
+29500
+0.13698822110891343
+30000
+0.13643546104431153
+30500
+0.13622979819774628
+31000
+0.13550300548473995
+31500
+0.13655788997809093
+32000
+0.13610737919807434
+32500
+0.135803917547067
+33000
+0.13579158037900924
+33500
+0.1356825475891431
+34000
+0.1356929947932561
+34500
+0.13640829970439275
+35000
+0.13555522958437602
+Save 4 layers.
+
+Final minimum loss: 0.135503
+Used time for training: 2792s
+Delete the data IO class!
+
+Train completed Tue 02/09/2021  1:04:08.39 
+ 
+---------------------------------------------------------------------
+Simulation started Tue 02/09/2021  1:04:08.40 
+ 
+Function is set to Simulation
+Corr para is set to 0.80
+BP iter for gen data is set to: [1]
+BP iter for simulation is set to: [1 1]
+Correlation function of channel noise: 
+[0.9999999  0.79999995 0.64       0.51199996 0.40960002 0.32768
+ 0.262144   0.20971519 0.16777213 0.13421775]
+Real simutimes: 15000
+Construct the Matrics H class!
+
+return Matrics C-V successfully!
+
+return Matrics V-C successfully!
+
+Open a tf session!
+Restore the first 4 layers.
+
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Batch id: 0
+Batch id: 1
+Batch id: 2
+Time: 24s
+end
+
+Close a tf session!
+Correlation function of channel noise: 
+[1.0000001  0.5        0.25       0.125      0.0625     0.03125
+ 0.015625   0.0078125  0.00390625 0.00195313]
+Construct the Matrics H class!
+
+return Matrics C-V successfully!
+
+return Matrics V-C successfully!
+
+Open a tf session!
+Open a tf session!
+Restore the first 4 layers.
+
+Batch 0 in total 47 batches. Practical EbN0: 0.00
+Batch 1 in total 47 batches. Practical EbN0: 0.00
+Batch 2 in total 47 batches. Practical EbN0: 0.00
+Batch 3 in total 47 batches. Practical EbN0: 0.00
+Batch 4 in total 47 batches. Practical EbN0: 0.00
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 0.50
+Batch 1 in total 47 batches. Practical EbN0: 0.50
+Batch 2 in total 47 batches. Practical EbN0: 0.50
+Batch 3 in total 47 batches. Practical EbN0: 0.50
+Batch 4 in total 47 batches. Practical EbN0: 0.50
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 1.00
+Batch 1 in total 47 batches. Practical EbN0: 1.00
+Batch 2 in total 47 batches. Practical EbN0: 1.00
+Batch 3 in total 47 batches. Practical EbN0: 1.00
+Batch 4 in total 47 batches. Practical EbN0: 1.00
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 1.50
+Batch 1 in total 47 batches. Practical EbN0: 1.50
+Batch 2 in total 47 batches. Practical EbN0: 1.50
+Batch 3 in total 47 batches. Practical EbN0: 1.50
+Batch 4 in total 47 batches. Practical EbN0: 1.50
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 2.00
+Batch 1 in total 47 batches. Practical EbN0: 2.00
+Batch 2 in total 47 batches. Practical EbN0: 2.00
+Batch 3 in total 47 batches. Practical EbN0: 2.00
+Batch 4 in total 47 batches. Practical EbN0: 2.00
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 2.50
+Batch 1 in total 47 batches. Practical EbN0: 2.50
+Batch 2 in total 47 batches. Practical EbN0: 2.50
+Batch 3 in total 47 batches. Practical EbN0: 2.50
+Batch 4 in total 47 batches. Practical EbN0: 2.50
+10800000 bits are simulated!
+Batch 0 in total 47 batches. Practical EbN0: 3.00
+Batch 1 in total 47 batches. Practical EbN0: 3.00
+Batch 2 in total 47 batches. Practical EbN0: 3.00
+Batch 3 in total 47 batches. Practical EbN0: 3.00
+Batch 4 in total 47 batches. Practical EbN0: 3.00
+10800000 bits are simulated!
+Time: 36s
+end
+
+Close the tf session!
+Close a tf session!
+Simulation completed Tue 02/09/2021  1:05:17.10 
+ 
+---------------------------------------------------------------------
