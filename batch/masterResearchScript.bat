@@ -24,6 +24,11 @@ set experimentNames[1]=Determining BP Effectiveness
 		set trialArgsE1[4]=-CorrPara 0.8 -BP_IterForGenData 4 -BP_IterForSimu 4,4
 	set trialDescriptionsE1[5]=BP(5)-CNN-BP(5)
 		set trialArgsE1[5]=-CorrPara 0.8 -BP_IterForGenData 5 -BP_IterForSimu 5,5
+set experimentNames[2]=Testing Script - Multiple CNN
+	set trialDescriptionsE2[1]=Test 1: 2 same CNN
+		set trialArgsE2[1]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2 -SameModelAllNets True
+	set trialDescriptionsE2[2]=Test 2: 2 different CNN
+		set trialArgsE2[2]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2
 :: ^^^ ADD NEW EXPERIMENTS/TRIALS HERE ^^^ *********************************************************************
 
 :: experiment selection
