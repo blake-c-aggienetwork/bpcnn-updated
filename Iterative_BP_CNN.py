@@ -76,7 +76,7 @@ def simulation_colored_noise(linear_code, top_config, net_config, simutimes_rang
 
     ## build BP decoding network
     if np.size(bp_iter_num) != denoising_net_num + 1:
-        print('Error: the length of bp_iter_num is not correct!')
+        print('Error: the length of bp_iter_num is not correct! 1!')
         exit(0)
     bp_decoder = BP_Decoder.BP_NetDecoder(H_matrix, batch_size)
 
@@ -204,7 +204,7 @@ def generate_noise_samples(linear_code, top_config, net_config, train_config, bp
 
     # build BP decoding network
     if np.size(bp_iter_num) != net_id_data_for + 1:
-        print('Error: the length of bp_iter_num is not correct!')
+        print('Error: the length of bp_iter_num is not correct! 2!')
         exit(0)
     bp_decoder = BP_Decoder.BP_NetDecoder(H_matrix, batch_size_each_SNR)
 
@@ -289,7 +289,7 @@ def analyze_residual_noise(linear_code, top_config, net_config, simutimes, batch
 
     # build BP decoding network
     if np.size(bp_iter_num) != net_id_tested + 1:
-        print('Error: the length of bp_iter_num is not correct!')
+        print('Error: the length of bp_iter_num is not correct! 3!\nnp.size(bp_iter_num)='+str(np.size(bp_iter_num))+'\nnet_id_tested + 1='+str(net_id_tested + 1))
         exit(0)
     bp_decoder = BP_Decoder.BP_NetDecoder(H_matrix, batch_size)
 
