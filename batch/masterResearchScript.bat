@@ -25,10 +25,20 @@ set experimentNames[1]=Determining BP Effectiveness
 	set trialDescriptionsE1[5]=BP(5)-CNN-BP(5)
 		set trialArgsE1[5]=-CorrPara 0.8 -BP_IterForGenData 5 -BP_IterForSimu 5,5
 set experimentNames[2]=Testing Script - Multiple CNN
-	set trialDescriptionsE2[1]=Test 1: 2 same CNN
+	set trialDescriptionsE2[1]=Test 1: 2 Same CNN
 		set trialArgsE2[1]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2 -SameModelAllNets True
-	set trialDescriptionsE2[2]=Test 2: 2 different CNN
+	set trialDescriptionsE2[2]=Test 2: 2 Different CNN
 		set trialArgsE2[2]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2
+	set trialDescriptionsE2[3]=Test 3.1: Same CNN
+		set trialArgsE2[3]=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
+		set multiNetE2[3]=true
+	set trialDescriptionsE2[4]=Test 3.2: Same CNN
+		set trialArgsE2[4]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2 -SameModelAllNets True
+	set trialDescriptionsE2[5]=Test 4.1: Different CNN
+		set trialArgsE2[5]=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
+		set multiNetE2[5]=true
+	set trialDescriptionsE2[6]=Test 4.2: Different CNN
+		set trialArgsE2[6]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2	
 :: ^^^ ADD NEW EXPERIMENTS/TRIALS HERE ^^^ *********************************************************************
 
 :: experiment selection
@@ -72,7 +82,7 @@ call :setupTrial %~2
 call :genData
 call :train
 call :simulation
-call :cleanup %~2
+if defined multiNetE%~1[%~2] ( exit /b 0 ) else ( call :cleanup %~2 )
 exit /b 0
 
 :genData
