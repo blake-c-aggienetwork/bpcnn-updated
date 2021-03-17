@@ -10,36 +10,29 @@ title Research Terminal
 cls
 echo Master Script For Running Iterative-BP-CNN Experiments &echo Created by Thomas Bonsey
 
-:: EXPERIMENT DEFINITIONS *********************************************************************
-:: each experiment needs a name
-:: each trial needs a description and input arguments
-set experimentNames[1]=Determining BP Effectiveness
-	set trialDescriptionsE1[1]=BP(1)-CNN-BP(1)
-		set trialArgsE1[1]=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
-	set trialDescriptionsE1[2]=BP(2)-CNN-BP(2)
-		set trialArgsE1[2]=-CorrPara 0.8 -BP_IterForGenData 2 -BP_IterForSimu 2,2
-	set trialDescriptionsE1[3]=BP(3)-CNN-BP(3)
-		set trialArgsE1[3]=-CorrPara 0.8 -BP_IterForGenData 3 -BP_IterForSimu 3,3
-	set trialDescriptionsE1[4]=BP(4)-CNN-BP(4)
-		set trialArgsE1[4]=-CorrPara 0.8 -BP_IterForGenData 4 -BP_IterForSimu 4,4
-	set trialDescriptionsE1[5]=BP(5)-CNN-BP(5)
-		set trialArgsE1[5]=-CorrPara 0.8 -BP_IterForGenData 5 -BP_IterForSimu 5,5
-set experimentNames[2]=Testing Script - Multiple CNN
-	set trialDescriptionsE2[1]=Test 1: 2 Same CNN
-		set trialArgsE2[1]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2 -SameModelAllNets True
-	set trialDescriptionsE2[2]=Test 2: 2 Different CNN
-		set trialArgsE2[2]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2
-	set trialDescriptionsE2[3]=Test 3.1: Same CNN
-		set trialArgsE2[3]=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
-		set multiNetE2[3]=true
-	set trialDescriptionsE2[4]=Test 3.2: Same CNN
-		set trialArgsE2[4]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2 -SameModelAllNets True
-	set trialDescriptionsE2[5]=Test 4.1: Different CNN
-		set trialArgsE2[5]=-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,1
-		set multiNetE2[5]=true
-	set trialDescriptionsE2[6]=Test 4.2: Different CNN
-		set trialArgsE2[6]=-CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2	
-:: ^^^ ADD NEW EXPERIMENTS/TRIALS HERE ^^^ *********************************************************************
+:: parse experiments from files
+set eNum=0
+set tNum=0
+set newExp=0
+set newTr=1
+for /f "delims=#" %%s in (experiments.txt) do (
+	if "%%s"=="" else
+	if "%%s"=="Experiment " (set newExp=1
+	) else if "!newExp!"=="1" (
+		set /a eNum+=1
+		set tNum=0
+		set newExp=0
+		set experimentNames[!eNum!]=%%s
+	) else if !newTr!==1 (
+		set /a tNum+=1
+		set newTr=2
+		set trialDescriptionsE!eNum![!tNum!]=%%s
+	) else if !newTr!==2 (
+		set newTr=3
+		set trialArgsE!eNum![!tNum!]=%%s 
+	) else if !newTr!==3 (
+		set newTr=1
+		set multiNetE!eNum![!tNum!]=%%s ))
 
 :: experiment selection
 call :arrayLength experimentNames numExperiments
@@ -82,7 +75,7 @@ call :setupTrial %~2
 call :genData
 call :train
 call :simulation
-if defined multiNetE%~1[%~2] ( exit /b 0 ) else ( call :cleanup %~2 )
+if !multiNetE%~1[%~2]!==multiple ( exit /b 0 ) else ( call :cleanup %~2 )
 exit /b 0
 
 :genData
