@@ -68,3 +68,95 @@ multiple
 Test 4.2: Different CNN
 -CorrPara 0.8 -BP_IterForGenData 1,1 -BP_IterForSimu 1,1,1 -NetNumber 2	
 single
+
+Test 5.1: Different CNN 2
+-CorrPara 0.8 -BP_IterForGenData 1 -BP_IterForSimu 1,2
+multiple
+
+Test 5.2: Different CNN 2
+-CorrPara 0.8 -BP_IterForGenData 1,2 -BP_IterForSimu 1,2,1 -NetNumber 2	-CurrentTrainingID 1
+single
+
+
+Experiment #3
+Multiple Iterations Between CNN and BP
+
+BP(6)-CNN-BP(6) (dont run, we already have these results)
+-CorrPara 0.8 -BP_IterForGenData 6 -BP_IterForSimu 6,6
+single
+
+2(BP(4)-CNN)-BP(4) Setup 1
+-CorrPara 0.8 -BP_IterForGenData 4 -BP_IterForSimu 4,4
+multiple
+
+2(BP(4)-CNN)-BP(4) Final
+-CorrPara 0.8 -BP_IterForGenData 4,4 -BP_IterForSimu 4,4,4 -NetNumber 2 -SameModelAllNets True
+single 
+
+3(BP(3)-CNN)-BP(3) Setup 1
+-CorrPara 0.8 -BP_IterForGenData 3 -BP_IterForSimu 3,3
+multiple
+
+3(BP(3)-CNN)-BP(3) Setup 2
+-CorrPara 0.8 -BP_IterForGenData 3,3 -BP_IterForSimu 3,3,3 -NetNumber 2 -SameModelAllNets True
+multiple
+
+3(BP(3)-CNN)-BP(3) Final
+-CorrPara 0.8 -BP_IterForGenData 3,3,3 -BP_IterForSimu 3,3,3,3 -NetNumber 3 -SameModelAllNets True
+single 
+
+5(BP(2)-CNN)-BP(2) Setup 1
+-CorrPara 0.8 -BP_IterForGenData 2 -BP_IterForSimu 2,2
+multiple
+
+5(BP(2)-CNN)-BP(2) Setup 2
+-CorrPara 0.8 -BP_IterForGenData 2,2 -BP_IterForSimu 2,2,2 -NetNumber 2 -SameModelAllNets True
+multiple
+
+5(BP(2)-CNN)-BP(2) Setup 3
+-CorrPara 0.8 -BP_IterForGenData 2,2,2 -BP_IterForSimu 2,2,2,2 -NetNumber 3 -SameModelAllNets True
+multiple
+
+5(BP(2)-CNN)-BP(2) Setup 4
+-CorrPara 0.8 -BP_IterForGenData 2,2,2,2 -BP_IterForSimu 2,2,2,2,2 -NetNumber 4 -SameModelAllNets True
+multiple
+
+5(BP(2)-CNN)-BP(2) Final
+-CorrPara 0.8 -BP_IterForGenData 2,2,2,2,2 -BP_IterForSimu 2,2,2,2,2,2 -NetNumber 5 -SameModelAllNets True
+single 
+
+
+Experiment #4
+Offsetting BP Iterations Improves BER
+
+BP(4)-CNN-BP(4)-CNN-BP(4) Setup
+-CorrPara 0.8 -BP_IterForGenData 4 -BP_IterForSimu 4,4
+multiple
+
+BP(4)-CNN-BP(4)-CNN-BP(4) Final
+-CorrPara 0.8 -BP_IterForGenData 4,4 -BP_IterForSimu 4,4,4 -NetNumber 2 -CurrentTrainingID 1
+single 
+
+BP(6)-CNN-BP(3)-CNN-BP(3) Setup
+-CorrPara 0.8 -BP_IterForGenData 6 -BP_IterForSimu 6,3
+multiple
+
+BP(6)-CNN-BP(3)-CNN-BP(3) Final
+-CorrPara 0.8 -BP_IterForGenData 6,3 -BP_IterForSimu 6,3,3 -NetNumber 2 -CurrentTrainingID 1
+single 
+
+BP(3)-CNN-BP(6)-CNN-BP(3) Setup
+-CorrPara 0.8 -BP_IterForGenData 3 -BP_IterForSimu 3,6
+multiple
+
+BP(3)-CNN-BP(6)-CNN-BP(3) Final
+-CorrPara 0.8 -BP_IterForGenData 3,6 -BP_IterForSimu 3,6,3 -NetNumber 2 -CurrentTrainingID 1
+single 
+
+BP(3)-CNN-BP(3)-CNN-BP(6) Setup
+-CorrPara 0.8 -BP_IterForGenData 3 -BP_IterForSimu 3,3
+multiple
+
+BP(3)-CNN-BP(3)-CNN-BP(6) Final
+-CorrPara 0.8 -BP_IterForGenData 3,3 -BP_IterForSimu 3,3,6 -NetNumber 2 -CurrentTrainingID 1
+single 
