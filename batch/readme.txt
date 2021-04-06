@@ -1,9 +1,9 @@
-Script for Iterative BP-CNN
+Batch Script for Iterative BP-CNN
 
 
-To use script:
+To use script from original project files (not this github):
 create "batch" directory inside of "Iterative-BP-CNN-master"
-place "masterResearchScript.bat" there
+place "windowsResearchScript.bat" there
 open CMD and navigate to the "batch" folder you created
 run masterResearchScript.bat from the command line!
 

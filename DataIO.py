@@ -8,8 +8,8 @@ class TrainingDataIO:
         # added lines ####################################
         tf.compat.v1.disable_resource_variables()
         tf.compat.v1.disable_eager_execution()
-        physical_devices = tf.config.list_physical_devices('GPU')
-        tf.config.experimental.set_memory_growth(physical_devices[0], True)
+        #physical_devices = tf.config.list_physical_devices('GPU')
+        #tf.config.experimental.set_memory_growth(physical_devices[0], True)
         ##################################################
         self.fin_label = open(label_filename, "rb")
         self.fin_feature = open(feature_filename, "rb")
@@ -54,8 +54,8 @@ class TestDataIO:
         # added lines ####################################
         tf.compat.v1.disable_resource_variables()
         tf.compat.v1.disable_eager_execution()
-        physical_devices = tf.config.list_physical_devices('GPU')
-        tf.config.experimental.set_memory_growth(physical_devices[0], True)
+        #physical_devices = tf.config.list_physical_devices('GPU')
+        #tf.config.experimental.set_memory_growth(physical_devices[0], True)
         ##################################################
         self.fin_label = open(label_filename, "rb")
         self.fin_feature = open(feature_filename, "rb")
@@ -96,8 +96,8 @@ class NoiseIO:
         # added lines ####################################
         tf.compat.v1.disable_resource_variables()
         tf.compat.v1.disable_eager_execution()
-        physical_devices = tf.config.list_physical_devices('GPU')
-        tf.config.experimental.set_memory_growth(physical_devices[0], True)
+        #physical_devices = tf.config.list_physical_devices('GPU')
+        #tf.config.experimental.set_memory_growth(physical_devices[0], True)
         ##################################################
         self.read_from_file = read_from_file
         self.blk_len = blk_len

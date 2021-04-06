@@ -10,8 +10,8 @@ class ConvNet:
         # added lines ####################################
         tf.compat.v1.disable_resource_variables()
         tf.compat.v1.disable_eager_execution()
-        physical_devices = tf.config.list_physical_devices('GPU')
-        tf.config.experimental.set_memory_growth(physical_devices[0], True)
+        #physical_devices = tf.config.list_physical_devices('GPU')
+        #tf.config.experimental.set_memory_growth(physical_devices[0], True)
         ##################################################
         
         self.net_config = net_config_in
